@@ -10,6 +10,7 @@ const ProductsContainer = () => {
     axios.get('https://fakestoreapi.com/products')
       .then(res => {
         setProducts(res.data)
+        console.log(res.data)
       })
   }, [])
 
@@ -21,6 +22,8 @@ const ProductsContainer = () => {
           title={e.title}
           price={e.price}
           image={e.image}
+          rate={e.rating.rate}
+          count={e.rating.count}
         />
       ))}
     </div>
