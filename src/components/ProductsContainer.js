@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 const axios = require('axios').default;
 import "@styles/components/ProductsContainer.scss"
-
+import Product from './Product';
 
 const ProductsContainer = () => {
   const [products, setProducts] = useState([])
@@ -13,18 +13,15 @@ const ProductsContainer = () => {
       })
   }, [])
 
-
-  console.log(products)
-
   return (
     <div className="products-container" >
       {products.map(e => (
-        <article key={e.id} >
-          <img src={e.image} alt={e.title} ></img>
-          <p>{e.title}</p>
-          <p>{e.price} $</p>
-          <button>Ver Oferta</button>
-        </article>
+        <Product
+          key={e.id}
+          title={e.title}
+          price={e.price}
+          image={e.image}
+        />
       ))}
     </div>
   );

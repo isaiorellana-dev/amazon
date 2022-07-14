@@ -1,8 +1,10 @@
+@import "../global/vars";
 .products-container {
   display: flex;
   flex-wrap: wrap;
   article {
     max-width: 300px;
+    border: solid 0.5px #d5dbdb;
     img {
       width: 80%;
     }

@@ -1,0 +1,25 @@
+@import "../global/vars";
+
+.departments-filter {
+  border-right: solid 0.5px #d5dbdb;
+  border-top: solid 1px #d5dbdb;
+  padding: 15px 0 0 15px;
+  font-size: 1.4rem;
+  div {
+    width: 100%;
+  }
+  p {
+    @include bold;
+  }
+  &__departments-container {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin: 5px 0 0 0;
+      span {
+        text-transform: capitalize;
+        margin-left: 3px;
+      }
+    }
+  }
+}
