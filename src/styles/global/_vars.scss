@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Amazon Ember RG";
+  src: url(@fonts/AmazonEmber_Rg.ttf);
+}
+@font-face {
+  font-family: "Amazon Ember BD";
+  src: url(@fonts/AmazonEmber_Bd.ttf);
+}
+@font-face {
+  font-family: "Amazon Ember LT";
+  src: url(@fonts/AmazonEmber_Lt.ttf);
+}
+
+$dark-blue: #131921;
+$blue: #232f3e;
+$light-blue: #007185;
+$yellow: #ffd213;
+$orange: #ffbc4a;
+$orange-hover: #f3a847;
+$dark-orange: #ab4e23;
+$black: #111111;
+$white: #f6f7f7;

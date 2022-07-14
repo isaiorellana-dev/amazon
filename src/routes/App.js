@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Layout from "@containers/Layout";
 import Home from "@pages/Home.js"
 import Detail from "@pages/Detail.js"
+import "@styles/global/config.scss"
 
 const App = () => {
   return (
