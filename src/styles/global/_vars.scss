@@ -11,6 +11,10 @@
   src: url(@fonts/AmazonEmber_Lt.ttf);
 }
 
+@mixin bold {
+  font-family: "Amazon Ember BD", Verdana, sans-serif;
+}
+
 $dark-blue: #131921;
 $blue: #232f3e;
 $light-blue: #007185;

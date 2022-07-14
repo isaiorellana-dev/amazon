@@ -1,6 +1,15 @@
+import PageTitle from "@components/PageTitle";
+import ProductsContainer from "@components/ProductsContainer";
+
+
 const Home = () => {
   return (
-    <h1>Hello World</h1>
+    <>
+      <PageTitle />
+      <section className="products-feed">
+        <ProductsContainer />
+      </section>
+    </>
   );
 }
 

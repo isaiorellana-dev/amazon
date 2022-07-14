@@ -23,7 +23,7 @@ const Header = () => {
         </div>
         <div className="header-top__center">
           <select>
-            <option selected="selected" >Ofertas</option>
+            <option defaultValue="selected" >Ofertas</option>
             <option >Arte y artesanías</option>
             <option >Automotriz</option>
             <option >Bebé</option>

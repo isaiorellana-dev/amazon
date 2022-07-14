@@ -1,4 +1,5 @@
 import Header from "@components/Header";
+import "@styles/containers/Layout.scss"
 
 const Layout = ({ children }) => {
   return (
