@@ -5,7 +5,7 @@ import "@styles/components/DepartmentsFilter.scss"
 
 const DepartmentsFilter = () => {
 
-  const { categories } = useContext(AppContext)
+  const { categories, handleFilter } = useContext(AppContext)
 
   return (
     <aside className='departments-filter'>
@@ -13,7 +13,7 @@ const DepartmentsFilter = () => {
       <div className='departments-filter__departments-container'>
         {categories.map(c => (
           <label key={c} >
-            <input type="checkbox" ></input>
+            <input type="checkbox" onChange={() => handleFilter(c)} ></input>
             <span>{c}</span>
           </label>
         ))}
