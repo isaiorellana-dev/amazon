@@ -1,23 +1,11 @@
-import { useEffect, useState } from 'react';
-const axios = require('axios').default;
+import { useContext, useRef, useState } from 'react';
+import AppContext from '../context/AppContext';
 import "@styles/components/DepartmentsFilter.scss"
 
 
 const DepartmentsFilter = () => {
 
-  const [categories, setCategories] = useState([])
-
-  useEffect(() => {
-    axios.get('https://fakestoreapi.com/products/categories')
-      .then(res => {
-        setCategories(res.data)
-      })
-  }, [])
-
-
-  console.log(categories)
-
-
+  const { categories } = useContext(AppContext)
 
   return (
     <aside className='departments-filter'>
@@ -30,7 +18,30 @@ const DepartmentsFilter = () => {
           </label>
         ))}
       </div>
+      <p>Deal Type</p>
+      <div className='departments-filter__deal-type-container'>
+        <span>Oferta del Día</span>
+        <span>Ofertas Relámpago</span>
+        <span>Ofertas Destacadas</span>
+        <span>Ofertas con acceso prioritario</span>
+        <span>Prime</span>
+      </div>
+      <p>Availability</p>
+      <div className='departments-filter__availability-container'>
+        <label  >
+          <input type="checkbox" defaultChecked ></input>
+          <span>Disponibles</span>
+        </label>
+        <label  >
+          <input type="checkbox" defaultChecked ></input>
+          <span>Proximas</span>
+        </label>
+        <label  >
+          <input type="checkbox" defaultChecked ></input>
+          <span>Finalizadas</span>
+        </label>
 
+      </div>
     </aside>
   );
 }

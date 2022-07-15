@@ -3,16 +3,23 @@ import cart from "@icons/cart.png"
 import location from "@icons/location.png"
 import menu from "@icons/menu.png"
 import usa from "@img/usa.png"
-import search from "@icons/search.png"
+import searchIcon from "@icons/search.png"
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import AppContext from "../context/AppContext"
 import "@styles/components/Header.scss"
 
 
 const Header = () => {
+  const { handleSearch, search } = useContext(AppContext)
+
+
+
   return (
     <header>
       <div className="header-top">
         <div className="header-top__left-side">
-          <img src={logo} alt="Amazon logo" className="header-top__left-side--logo" ></img>
+          <Link to="/"><img src={logo} alt="Amazon logo" className="header-top__left-side--logo" ></img></Link>
           <div className="header-top__left-side--location">
             <img src={location} alt="Ubicación" ></img>
             <div>
@@ -52,8 +59,10 @@ const Header = () => {
             <option >Tienda Kindle</option>
             <option >Videojuegos</option>
           </select>
-          <input></input>
-          <button><img src={search} alt="buscar boton" ></img></button>
+          <input type="text" value={search} onChange={handleSearch} ></input>
+          <Link to={search === '' ? undefined : "/search"}>
+            <img src={searchIcon} alt="buscar boton" ></img>
+          </Link>
         </div>
         <div className="header-top__right-side">
           <div className="header-top__right-side--language">

@@ -3,23 +3,42 @@
 .departments-filter {
   border-right: solid 0.5px #d5dbdb;
   border-top: solid 1px #d5dbdb;
-  padding: 15px 0 0 15px;
+  padding: 5px 0 0 15px;
   font-size: 1.4rem;
   div {
     width: 100%;
   }
   p {
     @include bold;
+    margin-top: 10px;
   }
   &__departments-container {
     display: flex;
     flex-direction: column;
     label {
       margin: 5px 0 0 0;
+      display: flex;
+      align-items: center;
       span {
         text-transform: capitalize;
         margin-left: 3px;
       }
+    }
+  }
+  &__availability-container {
+    label {
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 3px;
+      }
+    }
+  }
+  &__deal-type-container {
+    span {
+      display: block;
+      font-family: "Amazon Ember RG" sans-serif;
+      color: $light-blue;
     }
   }
 }
