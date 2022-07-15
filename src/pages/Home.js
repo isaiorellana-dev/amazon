@@ -17,6 +17,7 @@ const Home = () => {
           {filteredCategories.length > 1 ? (
             filteredCategories.map(e => (
               <Product
+                id={e.id}
                 key={e.id}
                 title={e.title}
                 price={e.price}
@@ -27,6 +28,7 @@ const Home = () => {
             ))
           ) : (products.map(e => (
             <Product
+              id={e.id}
               key={e.id}
               title={e.title}
               price={e.price}

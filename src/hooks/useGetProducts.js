@@ -5,6 +5,8 @@ const useGetProducts = () => {
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
 
+  const [categoryFilter, setCategoryFilter] = useState([])
+
   const [search, setSearch] = useState("")
 
   useEffect(() => {
@@ -31,7 +33,7 @@ const useGetProducts = () => {
     [products, search]
   )
 
-  const [categoryFilter, setCategoryFilter] = useState([])
+
 
   const handleFilter = (c) => {
     if (categoryFilter.some((e) => e === c)) {
@@ -41,9 +43,10 @@ const useGetProducts = () => {
     }
   }
 
-  const filteredCategories = products.filter(
-    (product) => categoryFilter.some(e => e === product.category)
-
+  const filteredCategories = useMemo(
+    () => products.filter(
+      (product) => categoryFilter.some(e => e === product.category)
+    ), [products, categoryFilter]
   )
 
   return {
