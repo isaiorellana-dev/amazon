@@ -6,7 +6,7 @@ import location from "@icons/location-black.png"
 const ProductDetail = ({ image, title, price, rate, count, description }) => {
   return (
     <article className="detail">
-      <img src={image} alt={title}></img>
+      <img src={image} alt={title} id="detail__image" ></img>
       <div className="detail__center">
         <p className="detail__center--title">
           {title}
