@@ -10,6 +10,7 @@ const Searched = () => {
       <ProductsContainer className="products-container-center" >
         {filteredProducts.map(e => (
           <Product
+            id={e.id}
             key={e.id}
             title={e.title}
             price={e.price}

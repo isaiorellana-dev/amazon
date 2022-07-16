@@ -35,6 +35,7 @@ const Home = () => {
               image={e.image}
               rate={e.rating.rate}
               count={e.rating.count}
+              description={e.description}
             />
           )))}
         </ProductsContainer>
