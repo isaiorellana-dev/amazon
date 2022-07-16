@@ -8,6 +8,7 @@ import Product from "../components/Product";
 
 const Home = () => {
   const { products, filteredCategories } = useContext(AppContext)
+
   return (
     <>
       <PageTitle />

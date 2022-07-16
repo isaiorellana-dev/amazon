@@ -1,4 +1,4 @@
-import Product from "@components/Product"
+import ProductDetail from "@components/ProductDetail"
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "@context/AppContext.js"
@@ -11,7 +11,7 @@ const Detail = () => {
 
   return (
     <section className="detail-page">
-      <Product
+      <ProductDetail
         title={productToShow[0].title}
         price={productToShow[0].price}
         image={productToShow[0].image}

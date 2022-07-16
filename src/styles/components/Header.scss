@@ -3,7 +3,6 @@
 header {
   display: flex;
   flex-direction: column;
-
   color: $white;
   .header-top {
     width: 100%;
@@ -218,4 +217,7 @@ header {
       }
     }
   }
+}
+
+@media (max-width: 800px) {
 }

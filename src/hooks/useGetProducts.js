@@ -10,15 +10,23 @@ const useGetProducts = () => {
   const [search, setSearch] = useState("")
 
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products/categories").then((res) => {
-      setCategories(res.data)
-    })
+    async function getCategories() {
+      const res = await axios.get(
+        "https://fakestoreapi.com/products/categories"
+      )
+      const data = await res.data
+      setCategories(data)
+    }
+    getCategories()
   }, [])
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products`).then((res) => {
-      setProducts(res.data)
-    })
+    async function getProducts() {
+      const res = await axios.get(`https://fakestoreapi.com/products`)
+      const data = await res.data
+      setProducts(data)
+    }
+    getProducts()
   }, [])
 
   const handleSearch = (event) => {
@@ -33,8 +41,6 @@ const useGetProducts = () => {
     [products, search]
   )
 
-
-
   const handleFilter = (c) => {
     if (categoryFilter.some((e) => e === c)) {
       setCategoryFilter(categoryFilter.filter((items) => items !== c))
@@ -44,10 +50,17 @@ const useGetProducts = () => {
   }
 
   const filteredCategories = useMemo(
-    () => products.filter(
-      (product) => categoryFilter.some(e => e === product.category)
-    ), [products, categoryFilter]
+    () =>
+      products.filter((product) =>
+        categoryFilter.some((e) => e === product.category)
+      ),
+    [products, categoryFilter]
   )
+  const [searchState, setSearchState] = useState([])
+
+  const handleSearchState = () => {
+    setSearchState(filteredProducts)
+  }
 
   return {
     products,
@@ -56,6 +69,8 @@ const useGetProducts = () => {
     search,
     filteredProducts,
     filteredCategories,
+    searchState,
+    handleSearchState,
     setCategoryFilter,
     categoryFilter,
     categories,

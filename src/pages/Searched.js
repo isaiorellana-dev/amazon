@@ -1,14 +1,14 @@
-import ProductsContainer from "../components/ProductsContainer";
-import { useContext } from 'react';
-import AppContext from '../context/AppContext';
-import Product from "../components/Product";
+import ProductsContainer from "../components/ProductsContainer"
+import { useContext } from "react"
+import AppContext from "../context/AppContext"
+import Product from "../components/Product"
 const Searched = () => {
-  const { filteredProducts } = useContext(AppContext)
+  const { searchState } = useContext(AppContext)
   return (
-    <section >
-      <p>Se encontraron {filteredProducts.length} resultados</p>
-      <ProductsContainer className="products-container-center" >
-        {filteredProducts.map(e => (
+    <section>
+      <p>Se encontraron {searchState.length} resultados</p>
+      <ProductsContainer className="products-container-center">
+        {searchState.map((e) => (
           <Product
             id={e.id}
             key={e.id}
@@ -21,7 +21,7 @@ const Searched = () => {
         ))}
       </ProductsContainer>
     </section>
-  );
+  )
 }
 
-export default Searched;
+export default Searched
