@@ -56,6 +56,8 @@ const useGetProducts = () => {
     search,
     filteredProducts,
     filteredCategories,
+    setCategoryFilter,
+    categoryFilter,
     categories,
   }
 }

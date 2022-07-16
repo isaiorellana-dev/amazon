@@ -1,11 +1,15 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 import "@styles/components/DepartmentsFilter.scss"
 
 
 const DepartmentsFilter = () => {
 
-  const { categories, handleFilter } = useContext(AppContext)
+  const { categories, handleFilter, setCategoryFilter } = useContext(AppContext)
+
+  useEffect(() => {
+    setCategoryFilter([])
+  }, [categories])
 
   return (
     <aside className='departments-filter'>
