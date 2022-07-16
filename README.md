@@ -12,4 +12,4 @@ Clon de la pagina de ofertas y detalles de producto de **Amazon**.
 
 1. Clonar el repositorio en tu directorio local
 2. Instalar las dependencias con el comando `npm install`
-3. Visualizar el proyecto con el comando `npm run start`
+3. Visualizar el proyecto con el comando `npm run dev`

@@ -4,3 +4,15 @@
   grid-template-columns: 242px 1fr;
   border-top: solid 0.5px #d5dbdb;
 }
+@media (max-width: 550px) {
+  .products-feed {
+    display: flex;
+    justify-content: center;
+    .departments-filter {
+      display: none;
+    }
+    .products-container {
+      justify-content: center;
+    }
+  }
+}

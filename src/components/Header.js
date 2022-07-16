@@ -90,7 +90,7 @@ const Header = () => {
               <img src={cart}></img>
               <p>0</p>
             </div>
-            <p>Carrito</p>
+            <p className="cart-name">Carrito</p>
           </div>
         </div>
       </div>
